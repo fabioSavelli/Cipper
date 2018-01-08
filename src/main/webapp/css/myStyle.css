@@ -1,0 +1,52 @@
+body{
+	padding-top: 110px; 
+}
+
+#linkDellaNavbar{
+	color: #fcfcfc;
+}
+
+#recuperaPsw{
+	color: 	#ccddcc;
+	line-height: 0px;
+}
+
+#bottoneFollower{
+	line-height: 20px;
+	margin-top: 5px;
+}
+
+#fotoUtente{
+	border-radius: 180px;
+}
+
+#formDiLogin {
+	height: 35px;
+}
+
+#bottoneDiLogin {
+	height: 35px;
+}
+
+#testoCarosello{
+	color: #555555;
+	line-height: 100px;
+}
+
+#imgCarosello{
+ 	-webkit-filter: blur(0.2px);
+}
+
+#sfondo{
+	background-image: url('../images/dark-tl.svg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom;	
+	background-position: left;
+	min-height: 500px;
+}
+
+#erroriNelLogin{
+	height: 40px;
+	line-height: 15px;
+}

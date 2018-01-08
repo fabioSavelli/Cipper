@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="package" />
+	<package name="/" extends="struts-default">
+	
+		<action name="login" class="com.cipper.action.LoginAction" method="execute">
+			<result name="success">/view/homepage.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<action name="logout" class="com.cipper.action.LoginAction" method="logout">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="home" class="com.cipper.action.LinkAction" method="execute">
+			<result name="success">/view/homepage.jsp</result>
+		</action>
+		
+		<action name="profilo" class="com.cipper.action.LinkAction" method="execute">
+			<result name="success">/view/profilo.jsp</result>
+		</action>
+		
+		<action name="follower" class="com.cipper.action.LinkAction" method="execute">
+			<result name="success">/view/follower.jsp</result>
+		</action>
+		
+		<action name="altri" class="com.cipper.action.PaginaAltriAction" method="execute">
+			<result name="success">/view/profiloAltri.jsp</result>
+		</action>
+		
+		<action name="cerca" class="com.cipper.action.CercaAction" method="execute">
+			<result name="success">/view/profiloAltri.jsp</result>
+			<result name="input">/view/homepage.jsp</result>
+		</action>
+		
+		<action name="segui" class="com.cipper.action.SeguiAction" method="execute">
+			<result name="success">/view/profiloAltri.jsp</result>
+		</action>
+		
+		<action name="EliminaAccount" class="com.cipper.action.EliminaAccountAction" method="execute">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="ModificaProfilo" class="com.cipper.action.ModificaProfiloAction" method="execute">
+			<result name="success">/view/modificaProfilo.jsp</result>
+		</action>
+		
+		<action name="ModificaPassword" class="com.cipper.action.ModificaProfiloAction" method="modificaPassword">
+			<result name="success">/view/modificaProfilo.jsp</result>
+			<result name="input">/view/modificaProfilo.jsp</result>
+		</action>
+		
+		<action name="ModificaFoto" class="com.cipper.action.ModificaProfiloAction" method="modificaFoto">
+			<result name="success">/view/modificaProfilo.jsp</result>
+			<result name="input">/view/modificaProfilo.jsp</result>
+		</action>
+		
+		
+		<action name="registrazione" class="com.cipper.action.RegistrazioneAction" method="execute">		
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="success">/view/homepage.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>		
+
+		<action name="nuovoCipHome" class="com.cipper.action.NuovoCipAction" method="execute">
+			<result name="success">/view/homepage.jsp</result>
+			<result name="input">/view/homepage.jsp</result>
+		</action>
+		
+		<action name="nuovoCipProfilo" class="com.cipper.action.NuovoCipAction" method="execute">
+			<result name="success">/view/profilo.jsp</result>
+			<result name="input">/view/profilo.jsp</result>
+		</action>
+
+		<action name="reCipHome" class="com.cipper.action.ReCipAction" method="execute">
+			<result name="success">/view/homepage.jsp</result>
+			<result name="input">/view/homepage.jsp</result>
+		</action>
+		
+		<action name="reCipProfilo" class="com.cipper.action.ReCipAction" method="execute">
+			<result name="success">/view/profilo.jsp</result>
+			<result name="input">/view/profilo.jsp</result>
+		</action>
+		
+		<action name="reCipAltri" class="com.cipper.action.ReCipAction" method="execute2">
+			<result name="success">/view/profiloAltri.jsp</result>
+			<result name="input">/view/profiloAltri.jsp</result>
+		</action>
+		
+		<action name="like" class="com.cipper.action.LikeAction" method="execute1">
+		</action>
+		
+		<action name="recuperaPsw" class="com.cipper.action.RecuperaPsw" method="execute">
+			<result name="success">/view/recuperaPassword.jsp</result>
+		</action>
+		
+		<action name="recuperaPassword" class="com.cipper.action.RecuperaPassword" method="execute">
+			<result name="success">/view/recuperaPassword.jsp</result>
+			<result name="input">/view/recuperaPassword.jsp</result>
+		</action>
+		
+	</package>
+</struts>
